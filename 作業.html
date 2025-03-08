@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #game-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #message {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #ff6347;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #restart-btn {
+            margin-top: 20px;
+            display: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #restart-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>猜數字遊戲</h1>
+        <p>猜一個 1 到 100 之間的數字。</p>
+        <input type="number" id="userInput" placeholder="輸入數字" />
+        <button onclick="checkGuess()">提交猜測</button>
+
+        <div id="message"></div>
+        <button id="restart-btn" onclick="restartGame()">重新開始</button>
+    </div>
+
+    <script>
+        // 隨機產生一個 1 到 100 之間的數字
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        // 檢查用戶猜測的數字
+        function checkGuess() {
+            let userGuess = document.getElementById("userInput").value;
+            let messageElement = document.getElementById("message");
+
+            if (userGuess === "") {
+                messageElement.textContent = "請輸入一個數字！";
+                return;
+            }
+
+            attempts++;
+
+            // 比較用戶猜測的數字與隨機數字
+            if (userGuess < secretNumber) {
+                messageElement.textContent = "太小了！再試一次。";
+            } else if (userGuess > secretNumber) {
+                messageElement.textContent = "太大了！再試一次。";
+            } else {
+                messageElement.textContent = `恭喜你猜對了！你猜了 ${attempts} 次。`;
+                document.getElementById("restart-btn").style.display = "block";
+            }
+        }
+
+        // 重新開始遊戲
+        function restartGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById("userInput").value = "";
+            document.getElementById("message").textContent = "";
+            document.getElementById("restart-btn").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
