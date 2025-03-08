@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索台灣</title>
+</head>
+<body>
+
+    <!-- 超連結區域 -->
+    <p><a href="https://www.taiwan.net.tw/" target="_self">台灣觀光局網站</a></p>
+    <p><a href="https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3" target="_blank">了解更多台灣資訊</a></p>
+    <p><a href="contact.html" target="_self">聯絡我們</a></p>
+
+    <!-- 圖片超連結 -->
+    <p><a href="https://www.taiwan.net.tw/">
+        <img src="https://picsum.photos/seed/taiwan/200/300" alt="台灣美景"></a></p>
+
+    <!-- 頁面主內容 -->
+    <header id="top">
+        <h1>歡迎來到探索台灣</h1>
+        <p>探索台灣的美麗景點、文化和美食。</p>
+    </header>
+
+    <!-- 導覽區域 -->
+    <nav>
+        <a href="#scenic-spots">台灣景點</a>
+        <a href="#culture">台灣文化</a>
+        <a href="#food">台灣美食</a>
+    </nav>
+
+    <!-- 內容區域 -->
+    <section id="scenic-spots">
+        <h2>台灣的美麗景點</h2>
+        <p>台灣擁有豐富的自然景觀，包括海灘、山脈、湖泊等。推薦的景點有日月潭、阿里山和太魯閣等。</p>
+    </section>
+
+    <section id="culture">
+        <h2>台灣文化</h2>
+        <p>台灣的文化融合了中華文化和原住民文化，並且受到日治時期的影響。台灣的廟會、歌仔戲和茶文化是其獨特的文化特色。</p>
+    </section>
+
+    <section id="food">
+        <h2>台灣美食</h2>
+        <p>台灣有豐富的小吃文化，臭豆腐、珍珠奶茶、蚵仔煎等都是深受歡迎的美食。你一定不能錯過台灣的夜市小吃！</p>
+    </section>
+
+</body>
+</html>
